@@ -15,6 +15,11 @@ class ItemTableViewCell: UITableViewCell {
     static var identifier: String { String(describing: self)}
     static var nib: UINib { UINib(nibName: String(describing: self), bundle: nil)}
 
+    override func prepareForReuse() {
+        fruitsLabel.text = ""
+        checkMark.image = nil
+    }
+
     func item(item: Item) {
         fruitsLabel.text = item.name
         if item.checkMark {
