@@ -11,10 +11,10 @@ class ViewController: UIViewController, UITableViewDataSource, InputViewDelegate
 
     @IBOutlet private weak var tableView: UITableView!
     private var items: [Item] = [
-        Item(name: Fruits.apple.name, checkMark: false),
-        Item(name: Fruits.orange.name, checkMark: true),
-        Item(name: Fruits.banana.name, checkMark: false),
-        Item(name: Fruits.pineappple.name, checkMark: true)
+        Item(name: Fruits.apple.name, checkMark: true),
+        Item(name: Fruits.orange.name, checkMark: false),
+        Item(name: Fruits.banana.name, checkMark: true),
+        Item(name: Fruits.pineappple.name, checkMark: false)
     ]
 
     override func viewDidLoad() {
@@ -49,7 +49,7 @@ class ViewController: UIViewController, UITableViewDataSource, InputViewDelegate
 
     // MARK: - InputViewDelegate
     func tappedSave(saveText: String) {
-        items.append(Item(name: saveText, checkMark: false))
+        items.append(Item(name: saveText, checkMark: true))
         tableView.reloadData()
     }
 }

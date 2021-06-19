@@ -17,13 +17,12 @@ class ItemTableViewCell: UITableViewCell {
 
     override func prepareForReuse() {
         fruitsLabel.text = ""
-        checkMark.image = nil
+        checkMark.isHidden = true
     }
 
     func item(item: Item) {
         fruitsLabel.text = item.name
-        if item.checkMark {
-            checkMark.image = UIImage(named: "CheckMark")
-        }
+        checkMark.image = UIImage(named: "CheckMark")
+        checkMark.isHidden = item.checkMark
     }
 }
