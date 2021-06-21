@@ -13,7 +13,6 @@
 		47D73893267B166700B75E73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47D73891267B166700B75E73 /* Main.storyboard */; };
 		47D73895267B166800B75E73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47D73894267B166800B75E73 /* Assets.xcassets */; };
 		47D73898267B166800B75E73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47D73896267B166800B75E73 /* LaunchScreen.storyboard */; };
-		47D738A5267B190F00B75E73 /* Fruits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D738A4267B190F00B75E73 /* Fruits.swift */; };
 		47D738A9267B1F5A00B75E73 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D738A8267B1F5A00B75E73 /* Item.swift */; };
 		47D738AD267B284500B75E73 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D738AB267B284500B75E73 /* ItemTableViewCell.swift */; };
 		47D738AE267B284500B75E73 /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47D738AC267B284500B75E73 /* ItemTableViewCell.xib */; };
@@ -31,7 +30,6 @@
 		47D73894267B166800B75E73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		47D73897267B166800B75E73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		47D73899267B166800B75E73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		47D738A4267B190F00B75E73 /* Fruits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruits.swift; sourceTree = "<group>"; };
 		47D738A8267B1F5A00B75E73 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		47D738AB267B284500B75E73 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		47D738AC267B284500B75E73 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
@@ -92,7 +90,6 @@
 		47D7389F267B17DA00B75E73 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				47D738A4267B190F00B75E73 /* Fruits.swift */,
 				47D738A8267B1F5A00B75E73 /* Item.swift */,
 			);
 			path = Model;
@@ -249,7 +246,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47D738A5267B190F00B75E73 /* Fruits.swift in Sources */,
 				47D73890267B166700B75E73 /* ViewController.swift in Sources */,
 				47D7388C267B166700B75E73 /* AppDelegate.swift in Sources */,
 				47D738B4267B2ED400B75E73 /* InputViewController.swift in Sources */,

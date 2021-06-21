@@ -7,14 +7,21 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, InputViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, InputViewControllerDelegate {
+
+    private enum FruitNames {
+        static let apple = "りんご"
+        static let orange = "みかん"
+        static let banana = "バナナ"
+        static let pineappple = "パイナップル"
+    }
 
     @IBOutlet private weak var tableView: UITableView!
     private var items: [Item] = [
-        Item(name: Fruits.apple.name, checkMark: true),
-        Item(name: Fruits.orange.name, checkMark: false),
-        Item(name: Fruits.banana.name, checkMark: true),
-        Item(name: Fruits.pineappple.name, checkMark: false)
+        Item(name: FruitNames.apple, isChecked: true),
+        Item(name: FruitNames.orange, isChecked: false),
+        Item(name: FruitNames.banana, isChecked: true),
+        Item(name: FruitNames.pineappple, isChecked: false)
     ]
 
     override func viewDidLoad() {
@@ -49,7 +56,7 @@ class ViewController: UIViewController, UITableViewDataSource, InputViewDelegate
 
     // MARK: - InputViewDelegate
     func tappedSave(saveText: String) {
-        items.append(Item(name: saveText, checkMark: true))
+        items.append(Item(name: saveText, isChecked: true))
         tableView.reloadData()
     }
 }

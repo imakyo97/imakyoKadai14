@@ -15,14 +15,8 @@ class ItemTableViewCell: UITableViewCell {
     static var identifier: String { String(describing: self)}
     static var nib: UINib { UINib(nibName: String(describing: self), bundle: nil)}
 
-    override func prepareForReuse() {
-        fruitsLabel.text = ""
-        checkMark.isHidden = true
-    }
-
     func item(item: Item) {
         fruitsLabel.text = item.name
-        checkMark.image = UIImage(named: "CheckMark")
-        checkMark.isHidden = item.checkMark
+        checkMark.image = item.isChecked ? UIImage(named: "CheckMark") : nil
     }
 }

@@ -7,18 +7,18 @@
 
 import UIKit
 
-protocol InputViewDelegate: AnyObject {
+protocol InputViewControllerDelegate: AnyObject {
     func tappedSave(saveText: String)
 }
 
 class InputViewController: UIViewController {
 
-    weak var delegate: InputViewDelegate?
+    weak var delegate: InputViewControllerDelegate?
 
     @IBOutlet private weak var nameTextField: UITextField!
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         nameTextField.text = ""
     }
 
@@ -29,14 +29,14 @@ class InputViewController: UIViewController {
     @IBAction private func tappedSave(_ sender: Any) {
         guard let saveText = nameTextField.text else { return }
         guard saveText != "" else {
-            notInputAlert()
+            presentNotInputAlert()
             return
         }
         delegate?.tappedSave(saveText: saveText)
         dismiss(animated: true, completion: nil)
     }
 
-    private func notInputAlert() {
+    private func presentNotInputAlert() {
         let alert = UIAlertController(
             title: "名前が未入力です",
             message: "名前を入力して下さい",
