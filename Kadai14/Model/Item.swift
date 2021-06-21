@@ -7,7 +7,9 @@
 
 import Foundation
 
+/* Bool型のプロパティの命名は先頭がisなどになるのがiOS開発では一般的（例：isHidden, isEnabled）
+ 命名をcheckMarkからisCheckedに変更 */
 struct Item {
     let name: String
-    let checkMark: Bool
+    let isChecked: Bool
 }

@@ -7,14 +7,27 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, InputViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, InputViewControllerDelegate {
+
+    /* ViewControllerが持つitemsの初期化にしか使っていないのでこちらへ移動してprivateを付けました。
+     また、名前を定義したいだけであって、switchで分岐したいわけではないので、static letで定義しました。 */
+    // TODO: enumでのstatic letの使い方を覚える
+    private enum FruitNames {
+        static let apple = "りんご"
+        static let orange = "みかん"
+        static let banana = "バナナ"
+        static let pineappple = "パイナップル"
+    }
 
     @IBOutlet private weak var tableView: UITableView!
+
+    /* enumを変更したため、引数nameを変更
+       命名をisCheckedに変更したため、引数名を変更 */
     private var items: [Item] = [
-        Item(name: Fruits.apple.name, checkMark: true),
-        Item(name: Fruits.orange.name, checkMark: false),
-        Item(name: Fruits.banana.name, checkMark: true),
-        Item(name: Fruits.pineappple.name, checkMark: false)
+        Item(name: FruitNames.apple, isChecked: false),
+        Item(name: FruitNames.orange, isChecked: true),
+        Item(name: FruitNames.banana, isChecked: false),
+        Item(name: FruitNames.pineappple, isChecked: true)
     ]
 
     override func viewDidLoad() {
@@ -48,8 +61,9 @@ class ViewController: UIViewController, UITableViewDataSource, InputViewDelegate
     }
 
     // MARK: - InputViewDelegate
+    // 命名をisCheckedに変更したため、引数名を変更
     func tappedSave(saveText: String) {
-        items.append(Item(name: saveText, checkMark: true))
+        items.append(Item(name: saveText, isChecked: false))
         tableView.reloadData()
     }
 }
