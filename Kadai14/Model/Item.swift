@@ -9,5 +9,5 @@ import Foundation
 
 struct Item {
     let name: String
-    let checkMark: Bool
+    let isChecked: Bool
 }
