@@ -32,10 +32,13 @@ final class ItemListViewController: UIViewController {
             let navigationController = segue.destination as! UINavigationController
             let inputViewController = navigationController.topViewController as! InputViewController
             inputViewController.viewModel = InputViewModel(items: items)
-            inputViewController.didTapDoneButton
-                .subscribe(onNext: { [weak self] _ in
-                    self?.itemTableView.reloadData()
-                })
+            inputViewController.event
+                .drive(onNext: { [weak self] event in
+                    switch event {
+                    case .reload:
+                        self?.itemTableView.reloadData()
+                    }
+                } )
                 .disposed(by: disposeBag)
         }
     }
